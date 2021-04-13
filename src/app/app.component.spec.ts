@@ -1,8 +1,6 @@
-import { assert, expect } from 'chai';
+import { expect } from 'chai';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/compiler';
-
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -11,7 +9,6 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule
       ],
-      schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
       declarations: [
         AppComponent
       ],
@@ -21,12 +18,19 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    assert.exists(app);
+    expect(app).to.exist;
   });
 
   it(`should have as title 'baton-fe-candidate'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).to.be.equal('baton-fe-candidate');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('h1').textContent).to.contain('Hello Baton Candidate');
   });
 });
