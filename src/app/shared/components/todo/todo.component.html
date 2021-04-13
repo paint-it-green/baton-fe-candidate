@@ -1,7 +1,0 @@
-<div class="todo fade-in">
-    <div>{{todo?.title}}</div>
-    <button class="todo__btn" *ngIf="todo?.completed === false" (click)="onDone()">
-        <span>Mark as Done</span>
-    </button>
-    <span *ngIf="todo?.completed">&#10004;</span>
-</div>
