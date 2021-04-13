@@ -21,8 +21,10 @@ describe('ApiService', () => {
     assert.exists(service);
   });
 
-  it('should fetch todos', async () => {
-    const todos = await service.get<Array<Todo>>('todos', false);
-    assert.equal(todos[0].completed, false);
+  it('should fetch todos', () => {
+    service.get<Array<Todo>>('todos', false)
+      .then((todos) => {
+        assert.equal(todos[0].completed, false);
+      });
   });
 });
