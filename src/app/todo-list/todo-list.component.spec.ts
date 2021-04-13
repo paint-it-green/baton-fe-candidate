@@ -1,4 +1,6 @@
+import { assert } from 'chai';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/compiler';
 
 import { TodoListComponent } from './todo-list.component';
 
@@ -8,9 +10,10 @@ describe('TodoListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TodoListComponent ]
+      schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
+      declarations: [TodoListComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -20,6 +23,6 @@ describe('TodoListComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    assert.exists(component);
   });
 });

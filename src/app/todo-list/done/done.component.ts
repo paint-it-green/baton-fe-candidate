@@ -31,10 +31,6 @@ export class DoneComponent implements OnInit {
     }
   }
 
-  onDone(todo: Todo): void {
-    todo.completed = true;
-  }
-
   navigateBack(): void {
     this.location.back();
   }
