@@ -1,0 +1,8 @@
+<section class="todo">
+    <button (click)="navigateBack()">&#8592; Back</button>
+    <ul class="todo__list">
+        <li class="todo__list--item" *ngFor="let todo of todos">
+            <app-todo [todo]="todo" (done)="onDone(todo)"></app-todo>
+        </li>
+    </ul>
+</section>

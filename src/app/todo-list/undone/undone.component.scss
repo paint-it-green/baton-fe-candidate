@@ -1,0 +1,12 @@
+.todo {
+    width: 100vh;
+    margin: 0 auto;
+    padding: 5vh 0;
+    height: 100%;
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
